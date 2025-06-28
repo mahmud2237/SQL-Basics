@@ -1,0 +1,48 @@
+-- Create a table named friends with three columns: id that stores INTEGER, name that stores TEXT, birthday that stores DATE
+CREATE TABLE friends (
+  id INTEGER,
+  name TEXT, 
+  birthday DATE
+);
+
+-- Beneath your current code, add Ororo Munroe to friends. Her birthday is May 30th, 1940.
+INSERT INTO friends (id, name, birthday) VALUES (1, 'Ororo Munroe', '30-05-1940');
+-- Add two more of your friends to the table. Insert an id, name, and birthday for each of them.
+INSERT INTO friends (id, name, birthday) VALUES (2, 'Exo Mune', '10-05-1960');
+INSERT INTO friends (id, name, birthday) VALUES (3, 'Troy Hnroe', '20-05-1950');
+SELECT * FROM friends;
+
+
+-- Ororo Munroe just realized that she can control the weather and decided to change her name. Her new name is “Storm”. Update her record in friends.
+UPDATE friends 
+SET name = 'Storm'
+WHERE id = 1;
+
+-- Add a new column named email
+ALTER TABLE friends 
+ADD COLUMN email TEXT;
+
+-- Let's check if the column added or not
+SELECT * FROM friends;
+
+-- Update the email address for everyone in your table. Example: Storm’s email is storm@codecademy.com.
+UPDATE friends
+SET email = 'Storm@codecademy.com'
+WHERE id = 1;
+
+UPDATE friends
+SET email = 'Exo@codecademy.com'
+WHERE id = 2;
+
+UPDATE friends
+SET email = 'Troy@codecademy.com'
+WHERE id = 3;
+
+-- Wait, Storm is fictinal... So, let's remove her from friends
+DELETE FROM friends
+WHERE id = 1;
+
+
+-- After inserted all data check the table
+SELECT * FROM friends;
+
